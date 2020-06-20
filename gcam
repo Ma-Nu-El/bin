@@ -1,0 +1,3 @@
+#!/usr/share/env bash
+COMMIT_MSG=$1
+git commit -am "$COMMIT_MSG"
