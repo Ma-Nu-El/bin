@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 git commit -am "Automatic commit pre submodule update"
-git submodule --init --remote --recursive
+git submodule update --init --remote --recursive
 git commit -am "Update submodules recursively"
 git submodule foreach --recursive "git clean -ffxd"
 git commit -am "Remove files left untracked after submodule update"
