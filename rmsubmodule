@@ -6,6 +6,9 @@
 # REMEMBER NOT TO USE A TRAILING SLASH
 #https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule/36593218#36593218
 #https://gist.github.com/myusuf3/7f645819ded92bda6677
+git commit -am "Automatic commit pre submodule deletion"
 git submodule deinit -f $1
 git rm -rf $1
 rm -rf .git/modules/$1
+git commit -am "Remove $1 submodule"
+echo "Commited deletion of $1 submodule"
