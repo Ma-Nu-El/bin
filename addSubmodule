@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-git submodule add -b master $1
+git submodule add $1 $2
 git submodule update --init --remote --recursive
 echo "Added and recursively updated submodule"
+
+
