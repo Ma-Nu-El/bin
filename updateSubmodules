@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
+# this script does the following:
+# - commit before for just in case
+# - fetch-in the submodule recursively and make new files part of the actual
+# working directory.
+# - commit the last
+# - remove files that are left untracked after the fetch-in
+# - commit the last
 git commit -am "Automatic commit pre submodule update"
 git submodule update --init --remote --recursive
 git commit -am "Update submodules recursively"
 git submodule foreach --recursive "git clean -ffxd"
 git commit -am "Remove files left untracked after submodule update"
+# this way, you get a complete update of whatever the state of upstream
+# is.
