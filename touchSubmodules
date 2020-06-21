@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+cd 1lib && testSubmodules && cd ../
+cd 2lib && testSubmodules && cd ../
+cd 3lib && testSubmodules && cd ../
+cd ./local && testSubmodules && cd ../
+
