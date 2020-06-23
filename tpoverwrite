@@ -41,7 +41,7 @@ echo 'tpoverwrite is a bash macro to overwrite tmuxp sessions'
 echo 'type '\''tpoverwrite --help'\'' for more info'
 exit
 fi
-if [[ $1 == '--help' ]]
+if [[ $1 == '--help' ]] | [[ -z $1 ]]
 then
 echo 'tpoverwrite - tmuxp overwrite'
 echo ''
