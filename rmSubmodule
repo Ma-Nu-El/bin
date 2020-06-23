@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# remove a submodule for real: DANGEROUS
+# remove a submodule for good: DANGEROUS
 # After this you just have to add and commit your changes
 # and your .git repo won't have a clue of the removed submodule
 # apply from project's root
@@ -9,7 +9,6 @@
 if [[ -z $2 ]]
 then
 git commit -am "Automatic commit pre submodule deletion"
-git submodule deinit -f $1
 git rm -rf $1
 rm -rf ./.git/modules/$1
 echo "Deleted $1 submodule"
@@ -20,10 +19,9 @@ then
 /usr/bin/git --git-dir=$HOME/.home/ --work-tree=$HOME \
 commit -am "Automatic commit pre submodule deletion"
 /usr/bin/git --git-dir=$HOME/.home/ --work-tree=$HOME \
-submodule deinit -f $1
-/usr/bin/git --git-dir=$HOME/.home/ --work-tree=$HOME \
 rm -rf $HOME/$1
-rm -rf $HOME/.home/modules/$1 # CAN'T FIND THIS DIRECTORY??
+/usr/bin/git --git-dir=$HOME/.home/ --work-tree=$HOME \
+rm -rf $HOME/.home/modules/$1 
 echo "Deleted $1 submodule"
 fi
 
