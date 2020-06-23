@@ -20,7 +20,6 @@ then
 commit -am "Automatic commit pre submodule deletion"
 /usr/bin/git --git-dir=$HOME/.home/ --work-tree=$HOME \
 rm -rf $HOME/$1
-/usr/bin/git --git-dir=$HOME/.home/ --work-tree=$HOME \
 rm -rf $HOME/.home/modules/$1 
 echo "Deleted $1 submodule"
 fi
