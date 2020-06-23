@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# create a help page
+# create a man page
+if [[ -z $1 ]]
+then
+echo "This is a script to automate actions related to your home directory."
+echo "To see more options type 'home --help'"
+fi
+# help page
+if [[ "$1" == "--help" ]] || [[ "$1" == "-h" ]]
+then
+echo "deploy"
+echo ""
+echo "This is a script to automate some stuff regarding your home folder, like downloading your dotfiles from github."
+echo ""
+echo "SYNOPSYS"
+echo "	deploy [install | remove]"
+echo "USAGE"
+echo "	deploy OPTIONS"
+echo "OPTIONS"
+echo "	install  [--recursive]"
+echo "		Download your home repo from github. This automatically installs dotfiles for bash, vim and tmux. If existing files for the same purpose, a backup is created and then installation takes place."
+echo "		If you add the '--recursive' flag, include the submodules."
+echo "	remove"
+echo "		Remove all installed dotfiles and submodules. If a backup was created, move the backed up files and folders to their original state prior to 'deploy --install'."	
+fi
